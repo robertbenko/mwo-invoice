@@ -43,4 +43,9 @@ public abstract class Product {
 
 	}
 
+	public Object getTax() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
