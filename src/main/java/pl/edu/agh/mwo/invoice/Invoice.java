@@ -24,7 +24,7 @@ public class Invoice {
 		return null;
 	}
 
-	public BigDecimal getTotal() {
+	public BigDecimal getGrossValue() {
 		return null;
 	}
 }
