@@ -7,14 +7,17 @@ import java.util.Random;
 
 import pl.edu.agh.mwo.invoice.product.Product;
 
+
+
 public class Invoice {
 	private Map<Product, Integer> products = new HashMap<Product, Integer>();
-	private final int number;
-	
-	public Invoice() {
-		this.number = new Random().nextInt(9999999) + 1;
-	}
 
+	private final int number; //to sobie dodaliśmy
+	
+	public Invoice (){
+		this.number = new Random().nextInt(999999999) + 1;
+	}
+	
 	public void addProduct(Product product) {
 		addProduct(product, 1);
 	}
@@ -49,7 +52,23 @@ public class Invoice {
 	}
 
 	public int getNumber() {
+		// TODO Auto-generated method stub
 		return number;
 	}
 	
+
+	public String preparePrint() {
+		// TODO Auto-generated method stub
+		String printed = String.valueOf(getNumber()); 
+		
+		for (Product product : products.keySet()) {
+			printed += "\n";
+			printed += product.getName();
+			printed += " " + products.get(product);
+			printed += " " + product.getPrice();
+						
+		}
+		printed += "Liczba pozycji: " + products.size();
+		return printed;
+	}
 }
